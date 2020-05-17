@@ -17,9 +17,9 @@ namespace CleanTemplate.Persistence.Database
         {
         }
 
-        public DbSet<WeatherForecastDb> WeaherForecasts { get; set; }
+        internal DbSet<WeatherForecastDb> WeaherForecasts { get; set; }
 
-        public DbSet<LocationDb> Locations { get; set; }
+        internal DbSet<LocationDb> Locations { get; set; }
 
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

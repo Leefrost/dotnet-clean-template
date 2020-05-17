@@ -2,9 +2,8 @@
 
 namespace CleanTemplate.Persistence.Database.DbEntities
 {
-    public class WeatherForecastDb
+    internal class WeatherForecastDb : DbEntity
     {
-        public Guid Id { get; set; }
         public int Temperature { get; set; }
         public string Wind { get; set; }
         public string Clouds { get; set; }
