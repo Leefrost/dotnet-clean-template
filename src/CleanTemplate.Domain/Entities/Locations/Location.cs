@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using CleanTemplate.Domain.Common;
+using CleanTemplate.Domain.Entities.Forecasts;
 
-namespace CleanTemplate.Domain.Entities
+namespace CleanTemplate.Domain.Entities.Locations
 {
     public class Location : IEntity<Guid>
     {
