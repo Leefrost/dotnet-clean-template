@@ -2,13 +2,15 @@
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
-using CleanTemplate.Persistence.Database.DbEntities;
+using CleanTemplate.Application.Common;
+using CleanTemplate.Domain.Entities.Forecasts;
+using CleanTemplate.Domain.Entities.Locations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace CleanTemplate.Persistence.Database
 {
-    public class ForecastDbContext : DbContext
+    public class ForecastDbContext : DbContext, IForecastDbContext
     {
         private IDbContextTransaction _currentTransaction;
 
@@ -17,11 +19,10 @@ namespace CleanTemplate.Persistence.Database
         {
         }
 
-        internal DbSet<WeatherForecastDb> WeaherForecasts { get; set; }
+        public DbSet<WeatherForecast> WeaherForecasts { get; set; }
 
-        internal DbSet<LocationDb> Locations { get; set; }
-
-
+        public DbSet<Location> Locations { get; set; }
+        
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
             return base.SaveChangesAsync(cancellationToken);
@@ -75,8 +76,7 @@ namespace CleanTemplate.Persistence.Database
                 }
             }
         }
-
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
