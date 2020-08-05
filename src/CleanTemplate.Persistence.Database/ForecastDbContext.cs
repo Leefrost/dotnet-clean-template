@@ -19,10 +19,10 @@ namespace CleanTemplate.Persistence.Database
         {
         }
 
-        public DbSet<WeatherForecast> WeaherForecasts { get; set; }
+        public DbSet<WeatherForecast> WeatherForecasts { get; set; }
 
         public DbSet<Location> Locations { get; set; }
-        
+
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
             return base.SaveChangesAsync(cancellationToken);
@@ -76,7 +76,7 @@ namespace CleanTemplate.Persistence.Database
                 }
             }
         }
-        
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
