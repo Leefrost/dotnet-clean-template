@@ -1,9 +1,8 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 using CleanTemplate.Application.Features.Forecast.Queries;
-
-using Microsoft.AspNetCore.Mvc;
 
 namespace CleanTemplate.WebUI.Controllers.Features.Weather
 {
