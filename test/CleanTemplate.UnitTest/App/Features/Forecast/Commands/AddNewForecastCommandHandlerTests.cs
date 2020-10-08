@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using CleanTemplate.Application.Features.Forecast.Commands;
 using CleanTemplate.Domain.Entities.Forecasts;
 using FluentAssertions;
-using FluentAssertions.Common;
 using NUnit.Framework;
 
 

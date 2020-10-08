@@ -1,22 +1,21 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using CleanTemplate.Application.Features.Forecast.Queries;
+using CleanTemplate.WebUI.Controllers;
+
 using Microsoft.AspNetCore.Mvc;
 
-using CleanTemplate.Application.Features.Forecast.Queries;
-
-namespace CleanTemplate.WebUI.Controllers.Features.Weather
+namespace CleanTemplate.WebUI.Features.Weather
 {
-    [Route("[controller]")]
+    [Route("api/forecast")]
     public class WeatherForecastController : ApiController
     {
-        [HttpGet]
+        [HttpGet("{location}")]
         public async Task<ActionResult<IQueryable<WeatherForecastContract>>> Get(string location)
         {
             var action = new GetAllForecastForLocationQuery(User?.Identity?.Name, location);
             var result = await Mediator.Send(action);
-
-            //mapping
-
+            
             return Ok(result);
         }
     }

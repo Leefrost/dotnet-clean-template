@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CleanTemplate.WebUI.Controllers.Features.Weather
+namespace CleanTemplate.WebUI.Features.Weather
 {
     public class WeatherForecastContract
     {
