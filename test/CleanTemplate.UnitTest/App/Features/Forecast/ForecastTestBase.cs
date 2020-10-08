@@ -32,7 +32,7 @@ namespace CleanTemplate.UnitTest.App.Features.Forecast
             var mockSet = new Mock<DbSet<WeatherForecast>>();
 
             var storageMock = new Mock<IForecastDbContext>();
-            storageMock.Setup(x => x.WeaherForecasts).Returns(mockSet.Object);
+            storageMock.Setup(x => x.WeatherForecasts).Returns(mockSet.Object);
 
 
             return storageMock;

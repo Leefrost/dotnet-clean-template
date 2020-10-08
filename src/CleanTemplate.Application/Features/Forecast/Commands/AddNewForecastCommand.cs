@@ -42,7 +42,7 @@ namespace CleanTemplate.Application.Features.Forecast.Commands
                 Wind = request.CreationData.Wind,
             };
 
-            _forecastDbContext.WeaherForecasts.Add(forecast);
+            _forecastDbContext.WeatherForecasts.Add(forecast);
 
             await _forecastDbContext.SaveChangesAsync(cancellationToken);
 
