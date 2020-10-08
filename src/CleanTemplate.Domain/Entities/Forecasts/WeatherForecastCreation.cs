@@ -9,5 +9,7 @@ namespace CleanTemplate.Domain.Entities.Forecasts
         public string Clouds { get; set; }
         public DateTime ForecastDate { get; set; }
         public string Summary { get; set; }
+
+        public Guid Location { get; set; }
     }
 }
